@@ -1,0 +1,283 @@
+@import url(./reset.css);
+
+body {
+	font: normal 12px Georgia, Arial, Verdana, sans-serif;
+	color: #030303;
+	/*background: white url(../images/bg_global.jpg) 0 0 repeat;*/
+	background: black;
+}
+
+.fleft { float: left; }
+.fcenter { margin: 0 auto; }
+.fright { float: right; }
+
+.tl { text-align: left; }
+.tc { text-align: center; }
+.tr { text-align: right; }
+.tj { text-align: justify; }
+
+.titles {
+	position: absolute;
+	font: bold 26px Helvetica, Arial, sans-serif;
+	color: #fff; 
+	text-shadow: 2px 2px 2px #000;
+	z-index: 999;
+}
+.tright { top: 10px; right: 10px; }
+.tleft { top: 10px; left: 10px; }
+.bleft { bottom: 10px; left: 10px; }
+.bright { bottom: 10px; right: 10px; }
+
+.breaker {
+	display: block;
+	clear: both;
+	overflow: hidden;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+
+#container {
+	position: relative;
+	width: 800px;
+	height: 599px;
+	margin: 0 auto;
+	background: #fff url(../images/sarkozy.png) 0 0 no-repeat;
+	overflow: hidden;
+}
+
+.area {
+	position: absolute;
+	display: block;
+	cursor: pointer;
+	opacity : 0.70;
+	-moz-opacity : 0.70;
+	-ms-filter: "alpha(opacity=70)"; /* IE 8 */
+	filter : alpha(opacity=70); /* IE < 8 */
+}
+
+#f24box {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	background: transparent url(../images/f24box.png) 0 0 no-repeat;
+	
+	padding: 10px;
+	text-align: left;
+	color: #fff;
+}
+	#f24textuals {
+		position: absolute;
+		top: 252px;
+		left: 430px;
+		width: 240px;
+		color: #696969;
+		font-size: 14px;
+	}
+	#f24textuals a {
+		color: #696969;
+		font-weight: bold;
+	}
+	#f24textuals h2 {
+		font-weight: bold;
+		color: #b30000;
+		margin-bottom: 20px;
+		font-size: 16px;
+	}
+	
+	#f24images {
+		position: absolute;
+		top: 191px;
+		left: 129px;
+		width: 265px;
+		height: 199px;
+	}
+	
+#f24box a#close {
+	position: absolute;
+	top: 192px;
+	left: 630px;
+	color: #696969;
+}	
+
+#footer {
+	width: 800px;
+	height: 30px;
+	margin: 0 auto;
+	background: black url(../images/bg_footer.png);
+	overflow: hidden;
+}
+	.sharing {
+		position:relative;
+		bottom:-7px;
+		height: 30px;
+	}
+	
+	.sharing .fb_share_count_nub_right {
+		display:none;
+	}
+	
+	.sharing .inputEmbed span {
+		color:white;
+		font-weight:bold;
+		text-decoration:underline;
+		cursor:pointer;
+	}
+	
+	.sharing a, .sharing .share{
+		font-size:12px;
+		color:gray;
+		text-decoration:none;
+		float:right;
+		margin-right:5px;
+	}
+	
+	.sharing .bg-white {
+		background:white;
+		padding:1px 2px;
+		padding-bottom:0px;
+		border:1px solid gray;
+		margin-top:-1px;
+		height:17px;
+	}
+	
+	.sharing .share.twitter {  }
+	.sharing a img{ border:0px; }
+
+#couple {
+	top: 0;
+	left: 0;
+	width: 234px;
+	height: 152px;
+	background: transparent url(../images/decoupes/1couple.png) 0 0 no-repeat;
+}
+#logement {
+	top: 0;
+	left: 216px;
+	width: 246px;
+	height: 146px;
+	background: transparent url(../images/decoupes/2logement.png) 0 0 no-repeat;
+}
+#charter {
+	top: 0;
+	left: 462px;
+	width: 170px;
+	height: 141px;
+	background: transparent url(../images/decoupes/3charter.png) 0 0 no-repeat;
+}
+#crs {
+	top: 0;
+	left: 615px;
+	width: 185px;
+	height: 100px;
+	background: transparent url(../images/decoupes/4crs.png) 0 0 no-repeat;
+}
+#foule {
+	top: 106px;
+	left: 0;
+	width: 259px;
+	height: 167px;
+	background: transparent url(../images/decoupes/5foule.png) 0 0 no-repeat;
+}
+#infirmiere {
+	top: 145px;
+	left: 239px;
+	width: 189px;
+	height: 146px;
+	background: transparent url(../images/decoupes/6infirmiere.png) 0 0 no-repeat;
+}
+#mairie {
+	top: 116px;
+	left: 506px;
+	width: 142px;
+	height: 146px;
+	background: transparent url(../images/decoupes/7mairie.png) 0 0 no-repeat;
+}
+#roulotte {
+	top: 98px;
+	left: 629px;
+	width: 172px;
+	height: 133px;
+	background: transparent url(../images/decoupes/8roulotte.png) 0 0 no-repeat;
+}
+#usa {
+	top: 244px;
+	left: 0;
+	width: 141px;
+	height: 208px;
+	background: transparent url(../images/decoupes/9usa.png) 0 0 no-repeat;
+}
+#rom {
+	top: 261px;
+	left: 131px;
+	width: 153px;
+	height: 173px;
+	background: transparent url(../images/decoupes/10rom.png) 0 0 no-repeat;
+}
+#camera {
+	top: 279px;
+	left: 266px;
+	width: 121px;
+	height: 217px;
+	background: transparent url(../images/decoupes/11camera.png) 0 0 no-repeat;
+}
+#manifestation {
+	top: 308px;
+	left: 354px;
+	width: 161px;
+	height: 200px;
+	background: transparent url(../images/decoupes/12manifestation.png) 0 0 no-repeat;
+}
+#lepen {
+	top: 234px;
+	left: 489px;
+	width: 194px;
+	height: 207px;
+	background: transparent url(../images/decoupes/13lepen.png) 0 0 no-repeat;
+}
+#course {
+	top: 165px;
+	left: 647px;
+	width: 154px;
+	height: 233px;
+	background: transparent url(../images/decoupes/14course.png) 0 0 no-repeat;
+}
+#ps {
+	top: 408px;
+	left: 0px;
+	width: 151px;
+	height: 192px;
+	background: transparent url(../images/decoupes/15ps.png) 0 0 no-repeat;
+}
+#onu {
+	top: 393px;
+	left: 142px;
+	width: 127px;
+	height: 206px;
+	background: transparent url(../images/decoupes/16onu.png) 0 0 no-repeat;
+}
+#france {
+	top: 487px;
+	left: 247px;
+	width: 279px;
+	height: 113px;
+	background: transparent url(../images/decoupes/17france.png) 0 0 no-repeat;
+}
+#marianne {
+	top: 395px;
+	left: 506px;
+	width: 176px;
+	height: 204px;
+	background: transparent url(../images/decoupes/18marianne.png) 0 0 no-repeat;
+}
+#presidence {
+	top: 394px;
+	left: 656px;
+	width: 145px;
+	height: 205px;
+	background: transparent url(../images/decoupes/19presidence.png) 0 0 no-repeat;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+	<title>Sample</title>
+	<meta http-equiv="content-language" content="fr" />
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link href="stylesheet/global.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="./javascript/mootools-1.2.4-core-yc.js"></script>
+	<script type="text/javascript" src="./javascript/mootools-1.2.4.4-more.js"></script>
+	<script type="text/javascript">
+	window.addEvent('domready', function() {
+		var vslide = new Fx.Slide('f24box'); 
+		vslide.hide();
+		
+		$$('#container .area').each( function(el) {
+			el.addEvent('click', function(event) {
+				var request = new Request.JSON({
+					url: './json/sarko.json',
+					onComplete: function(jsonObj) {
+						$each(jsonObj, function(prop, key) {
+							
+							if ( key == el.id ) {
+								$('f24box').empty();
+								div = new Element("div",{"id":"f24textuals"});
+								title = new Element("h2",{"html":prop.title});
+								
+								divimg = new Element("img",{"id":"f24images","src":"images/thumb/"+el.id+".jpg"});
+								
+								p = new Element("p", {"html":prop.title+"<br /><br />"});
+								a = new Element("a", {"href":prop.link,"html":"Voir l'article"});
+								aclose = new Element("a", {"id":"close","href":"#","html":"Fermer"});
+								aclose.addEvent('click',function(event){vslide.slideOut();});
+								
+								div.inject($('f24box'));
+								title.inject(div);
+								a.inject(div);
+								// p.inject(div);
+								
+								divimg.inject($('f24box'));
+								aclose.inject($('f24box'));
+								
+								vslide.slideIn();
+							}
+						});
+					}
+				}).send();
+				
+			});
+			el.addEvent('mouseenter', function(event) {
+				el.setStyle('opacity', 1);
+			});
+			el.addEvent('mouseout', function(event) {
+				el.setStyle('opacity', .7);
+			});
+		});
+		
+	});
+
+        function showEmbed() {
+            $$(".embed").show();
+            $$(".share-btn").hide();
+        }
+
+        function hideEmbed() {
+            $$(".embed").hide();
+            $$(".share-btn").show();
+        }
+	</script>
+</head>
+<body>
+
+<div id="container">
+	<h1 class="titles tright">L'offensive sécuritaire</h1>
+	<h1 class="titles bleft">Les réactions</h1>
+	<h1 class="titles bright">Décryptage</h1>
+	<h1 class="titles tleft">Vu du terrain</h1>
+	
+	<span class="area" id="couple">&nbsp;</span>
+	<span class="area" id="logement">&nbsp;</span>
+	<span class="area" id="charter">&nbsp;</span>
+	<span class="area" id="crs">&nbsp;</span>
+	<span class="area" id="foule">&nbsp;</span>
+	<span class="area" id="infirmiere">&nbsp;</span>
+	<span class="area" id="mairie">&nbsp;</span>
+	<span class="area" id="roulotte">&nbsp;</span>
+	<span class="area" id="usa">&nbsp;</span>
+	<span class="area" id="rom">&nbsp;</span>
+	<span class="area" id="camera">&nbsp;</span>
+	<span class="area" id="manifestation">&nbsp;</span>
+	<span class="area" id="lepen">&nbsp;</span>
+	<span class="area" id="course">&nbsp;</span>
+	<span class="area" id="ps">&nbsp;</span>
+	<span class="area" id="onu">&nbsp;</span>
+	<span class="area" id="france">&nbsp;</span>
+	<span class="area" id="marianne">&nbsp;</span>
+	<span class="area" id="presidence">&nbsp;</span>
+	
+	<div id="f24box">
+		&nbsp;
+	</div>
+</div>
+<div id="footer">
+	<div class="sharing">
+            <a href="http://www.france24.com/fr/"  readonly="true"  style="float:left;margin-left:5px;"><img src="images/fr24.jpg" alt="France24" /></a>
+
+            <div style="float:right; padding:0px 5px; display:none;" class="embed" >
+                <input type="text"
+                       value="<object type='text/html' src='http://www.france24.com/static/infographies/sarko-secu-fr/index.html' style='width:800px;height:600px'></object>"
+                       style="position:relative;top:-3px;"
+                       />
+                <img src="./images/close.png" alt="close" style="cursor:pointer;" onclick="hideEmbed()"/>
+            </div>
+
+            <div class="share-btn">
+                <a class="share mini-embed bg-white " href="javascript:showEmbed()">
+                    &lt;intégrer&gt;
+                </a>
+
+                <a class="share mini-share-mail bg-white"
+                   target="_blank"
+                   href='http://www.addtoany.com/email?linkurl=http://www.france24.com/fr/node/4330056&linkname=OWNI%2C%20Digital%20Journalist&t=OWNI, Digital Journalist'>
+                    <img alt="share mail" src="./images/mini-email.png" /> email
+                </a>
+
+                <a  class="share facebook"
+                    name="fb_share"
+                    type="button_count"
+                    share_url="http://www.france24.com/fr/node/4330056"
+                    href="http://www.facebook.com/sharer.php">
+                    Partager
+                </a>
+                <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+
+
+                <span class="share twitter bg-white">
+                    <iframe width="90"
+                            scrolling="no"
+                            height="20"
+                            frameborder="0"
+                            src="http://api.tweetmeme.com/button.js?url=http://www.france24.com/fr/node/4330056&amp;style=compact&amp;hashtags=RFI">
+                    </iframe>
+                </span>
+            </div>
+	    
+	</div>
+
+</div>
+
+</body>
+</html>
